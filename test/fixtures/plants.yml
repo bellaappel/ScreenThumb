@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species: MyString
+  toxicity: false
+  sunlight: MyString
+  user_id: 1
+  plant_type_id: 1
+
+two:
+  species: MyString
+  toxicity: false
+  sunlight: MyString
+  user_id: 1
+  plant_type_id: 1
