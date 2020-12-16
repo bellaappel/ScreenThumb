@@ -19,7 +19,7 @@ class PlantsController < ApplicationController
 
     private
     def plant_params
-        params.require(:plant).permit(:name, :species, :toxicity, :sunlight, plant_type id, plant_type_attributes: [:type])
+        params.require(:plant).permit(:name, :species, :toxicity, :sunlight, plant_type_id, plant_type_attributes: [:type])
     end
 
 end
