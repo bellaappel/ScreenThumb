@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_182718) do
   end
 
   create_table "plants", force: :cascade do |t|
+    t.string "name"
     t.string "species"
     t.boolean "toxicity"
     t.string "sunlight"
