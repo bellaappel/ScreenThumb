@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
     def index
-        @plants = Plants.all 
+        @plants = Plant.all 
     end
 
     def show
@@ -8,7 +8,7 @@ class PlantsController < ApplicationController
 
     def new
         @plant = Plant.new
-        
+        @plants = Plant.all
     end
 
     def create
