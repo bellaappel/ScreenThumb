@@ -1,9 +1,14 @@
 class PlantsController < ApplicationController
     def index
-        @plants = Plant.all 
+        if params[:plant_type_id]
+            @plants = PlantType.find(params[:plant_type_id]).plants
+        else
+            @plants = Plant.all 
+        end
     end
 
     def show
+        @plant = Plant.find(params[:id])
     end
 
     def new

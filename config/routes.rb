@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, except: [:index]
   resources :plants
+
+  resources :plant_types do
+    resources :plants, only: [:index]
+  end
+
   resources :sessions, only: [:create]
   get '/login', to: 'users#login', as: 'login'
   post '/login', to: 'users#create_session'
