@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
-      redirect_to user_path
+      redirect_to user_path(user.id)
     else
       redirect_to '/signup', notice: "Oops something isn't right"
     end
