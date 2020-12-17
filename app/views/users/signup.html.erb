@@ -5,11 +5,8 @@
  <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-<%= render partial: "users/form", locals: {user: @user} %>
-   <div class="field" %>
-    <%= f.label :password_confirmation %>
-    <%= f.text_field :password_confirmation %>
-  </div>
+<%= render partial: "form", locals: {user: @user} %>
+  
    <div class="actions">
     <%= f.submit "Sign Up" %>
   </div>
