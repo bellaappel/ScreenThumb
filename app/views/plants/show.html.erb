@@ -1,8 +1,16 @@
 <h1><%= @plant.name %></h1>
 
-<h2><%=@plant.species%></h2>
+<h3>Species:</h3>
+<%=@plant.species%>
 <br>
-<h2><%=@plant.sunlight %></h2>
+<h3>Sunlight Needed:</h3>
+<%=@plant.sunlight%>
 <br>
-<h2><%=@plant.toxicity %></h2>
+<h3>Toxicity:</h3>
+<%=@plant.toxicity %>
+<br>
+<h3> Thirst: </h3>
+<%= @plant.water %>
+<h3> How to Propogate: </h3>
+<%= @plant.propogation %>
 <br>
