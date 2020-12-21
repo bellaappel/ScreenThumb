@@ -19,14 +19,19 @@ class PlantsController < ApplicationController
     end
 
     def create
-        @plant = Plant.create(plant_params)
-        redirect_to @plants
+        params.inspect
+        @plant = Plant.new(plant_params)
+        if @plant.save
+            redirect_to @plant
+        else 
+            render :new
+        end
     end
 
 
     private
     def plant_params
-        params.require(:plant).permit(:name, :species, :toxicity, :sunlight, order_id, order_attributes: [:order])
+        params.require(:plant).permit(:name, :species, :toxicity, :sunlight, :water, :propogation, :order_id)
     end
 
     def require_login

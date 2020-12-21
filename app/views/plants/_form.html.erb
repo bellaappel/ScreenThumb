@@ -15,10 +15,15 @@
     <%= f.label :sunlight  %>
     <%= f.text_field :sunlight  %>
     <br>
-
-   
+     <%= f.label :water  %>
+    <%= f.text_field :water  %>
+    <br>
+     <%= f.label :propogation  %>
+    <%= f.text_field :propogation  %>
+    <br>
     <%= f.label :Order %>
-    <%= f.collection_select :order_id, @plants, :id, :type %>
+    <%= f.collection_select :order_id, Order.all, :id, :order %>
+    <br>
   <%= f.submit %>
 
 
