@@ -5,4 +5,5 @@ class User < ApplicationRecord
     has_many :orders, through: :plants
     has_secure_password
     validates :email, uniqueness: true
+    validates :username, uniqueness: true
 end
