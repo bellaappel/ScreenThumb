@@ -1,4 +1,4 @@
 class Plant < ApplicationRecord
-    belongs_to :plant_type
-    accepts_nested_attributes_for :plant_type
+    belongs_to :order
+    accepts_nested_attributes_for :order
 end
