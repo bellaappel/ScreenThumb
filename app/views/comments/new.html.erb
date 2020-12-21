@@ -1,0 +1,13 @@
+<h1> New Comment </h1>
+<%= form_for @comment do |f| %>
+<%= f.label :plant %>
+<%= f.collection_select :plant_id, Plant.all, :id, :name %>
+<br>
+<%= f.label :Title %>
+<%= f.text_field :title %>
+<br>
+<%= f.label :Comment %>
+<%= f.text_field :content %>
+<br>
+<%= f.submit %>
+<% end %>
