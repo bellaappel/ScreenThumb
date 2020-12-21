@@ -1,4 +1,6 @@
 class PlantsController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:index]
     def index
         if params[:plant_type_id]
             @plants = PlantType.find(params[:plant_type_id]).plants
@@ -25,6 +27,10 @@ class PlantsController < ApplicationController
     private
     def plant_params
         params.require(:plant).permit(:name, :species, :toxicity, :sunlight, plant_type_id, plant_type_attributes: [:type])
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 
 end
