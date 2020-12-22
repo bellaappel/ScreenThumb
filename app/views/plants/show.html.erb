@@ -16,8 +16,9 @@
 <br>
 
 
-<h2>Comments:<h2>
-<%= @plant.comments.each do |f| %>
+<h2>Comments:</h2>
+<% @plant.comments.each do |f| %>
 <%= f.title %>
 <%= f.content %>
- <% end %>
+<% end %>
+<%= link_to 'Add Comment', new_comment_path(:id => @plant.id)  %>

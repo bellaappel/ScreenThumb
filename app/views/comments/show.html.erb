@@ -1,0 +1,6 @@
+<h1>Comment:</h1>
+<%= @comment.title%></h1>
+<h3>Poster:<h3>
+<%= User.find_by_id(@comment.user_id).username %>
+<h2> Content:
+
