@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:index, :show]
+
     def index
         @comments = Comment.all
     end
@@ -29,6 +32,11 @@ class CommentsController < ApplicationController
     def comment_params
         params.require(:comment).permit(:title, :content, :plant_id)
     end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
+    end
+
 
 
 
