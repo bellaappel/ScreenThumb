@@ -12,28 +12,14 @@ body {
     color:rosybrown
   }
 
-  .topnav-centered {
-    text-align: center;
-  }
-
-  
-
-  .ul-navbar {
-    padding: 10px;
-    background: rosybrown;
-    margin-top: auto;
-  }
-
-  .navbar {
-    text-align: center;
-    padding: 0px 40px 0px 0px;
-    display: inline;
-  }
-
-  .topnav-centered a{
-    color:honeydew;
+nav {
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
   }
+
 
   .mainImage {
     display: block;

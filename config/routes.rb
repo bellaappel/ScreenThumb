@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
   resources :plants
   resources :comments
-
-  resources :plant_types do
-    resources :plants, only: [:index]
-  end
+  resources :orders, only: [:index, :show]
 
   resources :sessions, only: [:create]
   get '/login', to: 'users#login', as: 'login'

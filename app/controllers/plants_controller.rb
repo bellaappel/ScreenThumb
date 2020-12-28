@@ -15,11 +15,10 @@ class PlantsController < ApplicationController
 
     def new
         @plant = Plant.new
-        @plants = Plant.all
+        # @plants = Plant.all
     end
 
     def create
-        params.inspect
         @plant = Plant.new(plant_params)
         if @plant.save
             redirect_to @plant

@@ -1,0 +1,7 @@
+<h1> Plant Orders </h1>
+<ul>
+    <li><% @orders.each do |order| %><br><br>
+        <a href="/orders/<%= order.id %>"><%= order.order %></a>
+    <%end%>
+    </li>
+</ul>
