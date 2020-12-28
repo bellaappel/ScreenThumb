@@ -24,6 +24,15 @@
     <%= f.label :Order %>
     <%= f.collection_select :order_id, Order.all, :id, :order %>
     <br>
+    <br>
+    <p> Or Add New Order:</p>
+      <%= f.fields_for :orders do |o| %>
+        <%= o.label :order %>
+        <%= o.text_field :order %>
+        <br>
+    <% end %>
+    <br>
+
   <%= f.submit %>
 
 

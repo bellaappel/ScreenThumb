@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :plants
   resources :comments
   resources :orders, only: [:index, :show]
+  resources :plants do 
+    resources :comments
+  end
 
   resources :sessions, only: [:create]
   get '/login', to: 'users#login', as: 'login'
