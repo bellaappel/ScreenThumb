@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :comments
   resources :orders, only: [:index, :show]
   resources :plants do 
-    resources :comments
+    resources :comments, only: [:show, :new]
+  end
+  resources :orders do
+    resources :plants, only: [:index, :show]
   end
 
   resources :sessions, only: [:create]

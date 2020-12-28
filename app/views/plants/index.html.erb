@@ -1,7 +1,7 @@
 <h1> Plants </h1>
 <ul>
-    <li><% @plants.each do |plant| %><br><br>
-        <a href="/plants/<%= plant.id %>"><%= plant.name %></a>
+    <% @plants.each do |plant| %><br><br>
+        <li><a href="/plants/<%= plant.id %>"><%= plant.name %></a>
     <%end%>
     </li>
 </ul>

@@ -2,15 +2,15 @@ class PlantsController < ApplicationController
     before_action :require_login
     skip_before_action :require_login, only: [:index, :show]
     def index
-        if params[:order]
-            @plants = Order.find(params[:order]).plants
+        if params[:order_id]
+            @plants = Order.find(params[:order_id]).plants
         else
             @plants = Plant.all 
         end
     end
 
     def show
-        @plant = Plant.find(params[:id])
+            @plant = Plant.find(params[:id])
     end
 
     def new

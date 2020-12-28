@@ -1,0 +1,6 @@
+<h1><%= @order.order %></h1>
+<ul>
+  <% @order.plants.each do |plant| %>
+    <li><%=link_to plant.name, order_plant_path(@order.id, plant.id) %></li>
+  <% end %>
+</ul>
