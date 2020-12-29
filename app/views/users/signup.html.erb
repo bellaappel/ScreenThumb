@@ -5,6 +5,10 @@
  <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
+  <div class="field">
+    <%= label_tag :name %>
+    <%= text_field_tag "user[name]" %>
+  </div>
 <%= render partial: "form", locals: {user: @user} %>
   
    <div class="actions">
