@@ -1,7 +1,8 @@
-<h1>Comment:</h1>
+<%= Plant.find_by_id(@comment.plant_id).name%>
+<h3>Comment:</h3>
 <%= @comment.title%>
 <h3>Poster:<h3>
 <%= User.find_by_id(@comment.user_id).username %>
-<h2> Content:</h2>
+<h3> Content:</h3>
 <%= @comment.content%>
 

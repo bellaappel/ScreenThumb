@@ -1,6 +1,12 @@
 class PlantsController < ApplicationController
     before_action :require_login
     skip_before_action :require_login, only: [:index, :show]
+
+    def most_comments
+        @plant = plant_with_most_comments
+        render "show"
+    end
+    
     def index
         if params[:order_id]
             @plants = Order.find(params[:order_id]).plants

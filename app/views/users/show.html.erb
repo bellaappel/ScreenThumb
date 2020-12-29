@@ -1,10 +1,13 @@
 <h1> <%= @user.username %> </h1>
+<h2>Your Plants </h2>
  <ul>
     <% @user.plants.each do |plant| %><br><br>
        <li> <a href="/plants/<%= plant.id %>"><%= plant.name %></a>
     <%end%>
     </li>
+    </ul>
     <h2> Your Comments </h2>
+    <ul>
     <% @user.comments.each do |comment| %><br><br>
       <li>  <a href="/comments/<%= comment.id %>"><%= comment.title %></a>
     <%end%>
