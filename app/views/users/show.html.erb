@@ -1,10 +1,12 @@
 <h1> <%= @user.username %> </h1>
  <ul>
-    <li><% @user.plants.each do |plant| %><br><br>
-        <a href="/plants/<%= plant.id %>"><%= plant.name %></a>
+    <% @user.plants.each do |plant| %><br><br>
+       <li> <a href="/plants/<%= plant.id %>"><%= plant.name %></a>
+    <%end%>
+    </li>
+    <h2> Your Comments </h2>
+    <% @user.comments.each do |comment| %><br><br>
+      <li>  <a href="/comments/<%= comment.id %>"><%= comment.title %></a>
     <%end%>
     </li>
 </ul>
-
-<%= link_to 'Home', '/' %>
-<%= link_to 'Plants', plants_path %>
