@@ -1,5 +1,9 @@
 <h1>Edit User</h1>
-
+<%= form_with model: @user do |f| %>
 <%= render partial: "users/form", locals: {user: @user} %>
+  <div class="actions">
+    <%= f.submit "Edit" %>
+  </div>
+<% end %>
 <%= link_to 'Back', users_path %>
 

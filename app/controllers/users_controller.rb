@@ -28,8 +28,12 @@ class UsersController < ApplicationController
     end
   end
 
-
     def edit
+        @user = User.find_by(id: params[:id])
+        if @user == current_user 
+        else 
+            redirect_to user_path(@user.id)
+        end
     end
 
     def create
@@ -43,6 +47,7 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user = User.find_by(id: params[:id])
         if @user.update(user_params)
             redirect to @user
         else 
@@ -57,6 +62,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
     end   
 end
