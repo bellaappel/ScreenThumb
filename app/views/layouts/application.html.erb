@@ -10,21 +10,26 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <body>
+    <%= yield %>
+  <div class="d-flex justify-content-center">
   <div class="top-nav">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="nav nav-pills nav-fill">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
+         <% if user_is_logged_in? %>
+            <li class='nav-item'>
+              <%= link_to current_user.username, current_user, class: 'text-light nav-link'%>
+            </li>
+           <% end %> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           User
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        
-        <a class="dropdown-item" href="/users/show">View Account</a>
         <a class="dropdown-item" href="/signup">Create Account</a>
           <a class="dropdown-item" href="/login">Login</a>
           <a class="dropdown-item" href="/logout">Logout</a>
@@ -44,8 +49,8 @@
   </div>
 </nav>
 </div>
+</div>
 
-  <body>
-    <%= yield %>
+
   </body>
 </html>
