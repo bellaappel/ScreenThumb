@@ -1,17 +1,13 @@
-<h1> <%= @user.username %> </h1>
-<h2>Your Plants </h2>
- <ul>
-    <% @user.plants.each do |plant| %><br><br>
-       <li> <a href="/plants/<%= plant.id %>"><%= plant.name %></a>
-    <%end%>
-    </li>
-    </ul>
-    <h2> Your Comments </h2>
+<h1> <%= @user.name %> </h1>
+<div class='content-wrapper'> 
+    <h2> Your Comments: </h2>
     <ul>
-    <% @user.comments.each do |comment| %><br><br>
-      <li>  <a href="/comments/<%= comment.id %>"><%= comment.title %></a>
+    <% @user.comments.each do |comment| %><br>
+      <li> <h2><a href="/comments/<%= comment.id %>"><%= comment.title %></a></h2>
     <%end%>
     </li>
 </ul>
+</div>
+<br>
 
 <%= link_to 'Edit User', edit_user_path %>

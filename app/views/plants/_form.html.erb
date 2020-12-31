@@ -1,4 +1,5 @@
 <%= form_with(model: @plant, local: true) do |f| %>
+<div class='content-wrapper'> 
     <%= f.label :name  %>
     <%= f.text_field  :name%>
     <br>
@@ -35,6 +36,6 @@
 
   <%= f.submit %>
 
-
+</div>
 
 <% end %>

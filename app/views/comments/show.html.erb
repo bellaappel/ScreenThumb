@@ -1,8 +1,10 @@
-<%= Plant.find_by_id(@comment.plant_id).name%>
+<div class='content-wrapper'> 
+<h1><%= Plant.find_by_id(@comment.plant_id).name%></h1>
 <h3>Comment:</h3>
 <%= @comment.title%>
-<h3>Poster:<h3>
-<%= User.find_by_id(@comment.user_id).username %>
+<h3>Poster:</h3>
+<%= User.find_by_id(@comment.user_id).name%>
 <h3> Content:</h3>
 <%= @comment.content%>
+</div>
 
