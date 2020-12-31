@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user.id)
     else
-      redirect_to '/signup', notice: "Oops something isn't right"
+      redirect_to '/login', notice: "Incorrect Login or Password!"
     end
   end
 

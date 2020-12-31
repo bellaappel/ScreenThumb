@@ -1,7 +1,6 @@
-<h1> Plants </h1>
-<ul>
+<p><h1> Plants </h1><p>
     <% @plants.each do |plant| %><br><br>
-        <li><a href="/plants/<%= plant.id %>"><%= plant.name %></a>
-    <%end%>
-    </li>
-</ul>
+     <%= link_to plant, class: 'link-card' do %>
+        <%= plant.name %>
+        <%end%>
+    <% end %>

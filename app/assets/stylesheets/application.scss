@@ -14,15 +14,32 @@
  *= require_self
  */
  body {
-    background-color: honeydew;
-    color: #333;
+    text-align: center;
+    background-color: #896a67;
+    color: #ddc8c4;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
+label 
+
   .mainhead  {
     text-align: center;
     color:rosybrown
+  }
+
+  img {
+    width: 20%;
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+
+  .content-wrapper {
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 800px;
+    background-color: white;
   }
 
 nav {
@@ -33,12 +50,12 @@ nav {
 
   }
 .navbar-custom {
-    background-color: honeydew;
+    background-color: #896a67;
 
 }
 
 .nav-link {
-    color:rosybrown !important;
+    color:#253031!important;
 }
 
 
@@ -88,7 +105,7 @@ nav {
   }
 
   a { 
-    color: palevioletred;
+    color: #ddc8c4;
   }
 
   h2 {
