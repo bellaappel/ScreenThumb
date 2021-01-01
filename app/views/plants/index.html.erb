@@ -2,7 +2,7 @@
 <div class='invisible-wrapper'>
     <% @plants.each do |plant| %><br><br>
      <%= link_to plant, class: 'link-card' do %>
-        <%= plant.name %>
+       <h3 class='plant'> <%= plant.name %></h3>
         <%end%>
     <% end %>
 <div>    

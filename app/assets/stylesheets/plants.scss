@@ -16,8 +16,8 @@
    }
 
    .link-card{
-     justify-content: center;
-    width: 60%;
+    justify-content: center;
+    min-width: content;
     background: white ;
     border: 2px solid #243e36;
     margin: 10px;
@@ -25,6 +25,13 @@
     display: block;
     text-decoration: none;
     box-shadow: 5px 5px 10px #243e36;
+    }
+
+  .plant{
+    font-weight: normal;
+    font-size: 20px;
+    padding: .5em 1em 0em 1em ;
+
     }
 
 
