@@ -236,6 +236,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage
   bcrypt
   bootsnap (>= 1.4.2)
   byebug

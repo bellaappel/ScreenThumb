@@ -34,11 +34,16 @@ class PlantsController < ApplicationController
     end
 
     def edit 
+        @plant = Plant.find_by(id: params[:id])
     end
     
     def update
         @plant = Plant.find_by(id: params[:id])
-        @plant.update(plant_params)
+        if @plant.update(plant_params)
+            redirect_to @plant, notice: 'Plant was successfully updated.'
+        else
+            render :edit
+        end
     end
 
     def destroy

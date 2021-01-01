@@ -57,3 +57,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'dotenv-rails'
+
+gem 'activestorage'
