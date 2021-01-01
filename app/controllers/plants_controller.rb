@@ -33,10 +33,23 @@ class PlantsController < ApplicationController
         end
     end
 
+    def edit 
+    end
+    
+    def update
+        @plant = Plant.find_by(id: params[:id])
+        @plant.update(plant_params)
+    end
+
+    def destroy
+        @plant.destroy
+        redirect_to plants_url, notice: 'Plant was successfully sucessfully deleted.'
+    end
+
 
     private
     def plant_params
-        params.require(:plant).permit(:name, :species, :toxicity, :sunlight, :water, :propogation, :order_id)
+        params.require(:plant).permit(:img, :name, :species, :toxicity, :sunlight, :water, :propogation, :order_id)
     end
 
     def require_login

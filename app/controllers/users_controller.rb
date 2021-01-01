@@ -17,24 +17,24 @@ class UsersController < ApplicationController
    end
 
 
-  def create_session
+    def create_session
     user = User.find_by(username: params[:user][:username])
 
-    if user && user.authenticate(params[:user][:password])
-      session[:user_id] = user.id
-      redirect_to user_path(user.id)
-    else
-      redirect_to '/login', notice: "Incorrect Login or Password!"
-    end
-  end
-
-    def edit
-        @user = User.find_by(id: params[:id])
-        if @user == current_user 
-        else 
-            redirect_to user_path(@user.id)
+        if user && user.authenticate(params[:user][:password])
+            session[:user_id] = user.id
+            redirect_to user_path(user.id)
+        else
+            redirect_to '/login', notice: "Incorrect Login or Password!"
         end
     end
+
+  def edit
+     @user = User.find_by(id: params[:id])
+    if @user == current_user 
+    else 
+         redirect_to user_path(@user.id)
+    end
+end
 
     def create
         user = User.new(user_params)
@@ -59,6 +59,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :uid)
     end   
 end

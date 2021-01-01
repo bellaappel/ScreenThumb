@@ -1,4 +1,7 @@
 <h1><%= @plant.name %></h1>
+<% if @plant.img.attached? %>
+    <image src="<%(url_for(@plant.img))%>">
+   <%end%> 
 <div class='content-wrapper'> 
 <h3>Species:</h3>
 <%=@plant.species%>
@@ -23,4 +26,6 @@
 <% end %>
 <br>
 <%= link_to 'Add Comment', new_comment_path(:id => @plant.id)  %>
-<div class='content-wrapper'> 
+<%= link_to 'Edit Plant', edit_plant_path(:id => @plant.id) %>
+
+

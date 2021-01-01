@@ -1,5 +1,9 @@
 <div class='content-wrapper'> 
 <h1><%= Plant.find_by_id(@comment.plant_id).name%></h1>
+<% if @plant.img.attached? %>
+    <img src="<%=(url_for(@plant.img))%>">
+ <% end %>
+
 <h3>Comment:</h3>
 <%= @comment.title%>
 <h3>Poster:</h3>

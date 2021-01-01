@@ -1,6 +1,8 @@
 <p><h1> Plants </h1><p>
+<div class='invisible-wrapper'>
     <% @plants.each do |plant| %><br><br>
      <%= link_to plant, class: 'link-card' do %>
         <%= plant.name %>
         <%end%>
     <% end %>
+<div>    
