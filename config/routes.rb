@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'application#home'
+  get '/', to: "application#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/plant-with-most-comments', to: 'plants#most_comments', as: 'most_commented_plant'
   resources :users, except: [:index]
