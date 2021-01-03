@@ -2,6 +2,5 @@
 <h2><%= @plant.name %></h2>
 <%= render 'form', plant: @plant %>
 <br>
-<%= form_with model: @plant, method: :delete do |f| %>
-  <%= f.submit "Delete This Plant" %>
-<% end %>
+<%= button_to "Delete Plant", @plant, method: 'delete', data: 
+    {confirm: "Delete this plant? Action cannot be undone." } %>
