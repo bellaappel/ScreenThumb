@@ -1,6 +1,7 @@
 <h1> Edit Plant </h1>
+<div class='content-wrapper'> 
 <h2><%= @plant.name %></h2>
 <%= render 'form', plant: @plant %>
-<br>
 <%= button_to "Delete Plant", @plant, method: 'delete', data: 
     {confirm: "Delete this plant? Action cannot be undone." } %>
+</div>
