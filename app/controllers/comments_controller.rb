@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
     def show
         @comment = Comment.find(params[:id])
+        @plant = Plant.find(params[:id])
     end
 
     def new

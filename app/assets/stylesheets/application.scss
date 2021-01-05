@@ -113,7 +113,7 @@ nav {
   .button {
     box-shadow:inset 0px 1px 0px 0px #888098;
     background-color:#946e83;
-    border-radius:3px;
+    border-radius:12px;
     border:1px solid #6c6282;
     display:inline-block;
     cursor:pointer;
@@ -125,6 +125,7 @@ nav {
       text-shadow:0px 1px 0px #854629;
       margin-top: .5em;
       margin-bottom: .5em;
+    width: 25%;
   }
 
   
