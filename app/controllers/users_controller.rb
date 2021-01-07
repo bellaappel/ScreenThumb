@@ -9,16 +9,16 @@ class UsersController < ApplicationController
     end
 
    def signup
-    @user = User.new
+        @user = User.new
    end
 
    def login
-    @user = User.new
+        @user = User.new
    end
 
 
     def create_session
-    user = User.find_by(username: params[:user][:username])
+        user = User.find_by(username: params[:user][:username])
 
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
@@ -28,13 +28,13 @@ class UsersController < ApplicationController
         end
     end
 
-  def edit
-     @user = User.find_by(id: params[:id])
-    if @user == current_user 
-    else 
+    def edit
+        @user = User.find_by(id: params[:id])
+        if @user == current_user 
+        else 
          redirect_to user_path(@user.id)
+        end
     end
-end
 
     def create
         user = User.new(user_params)

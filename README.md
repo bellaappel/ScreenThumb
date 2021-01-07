@@ -1,25 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to ScreenThumb! Here you can explore all types of house plants and gather care information for them. As well as read or write comments on each plant. Happy potting! 
 
-Things you may want to cover:
+## Follow along below to clone and run this repo:
 
-* Ruby version
+first fork and clone repo to your local editor and run
 
-* System dependencies
+$ bundle install
 
-* Configuration
+$ rails db:migrate
 
-* Database creation
+$ rails s in your terminal and navigate to the correct port! 
 
-* Database initialization
+To learn more about my project visit:  
 
-* How to run the test suite
+https://bellaappel0.medium.com/using-active-storage-to-manage-upload-attachments-in-ruby-5-2-a99f7e457daa
 
-* Services (job queues, cache servers, search engines, etc.)
+Thanks for checking out ScreenThumb!
 
-* Deployment instructions
-
-* ...
-# ScreenThumb
+##License This is available as open source under the terms of the MIT License.
