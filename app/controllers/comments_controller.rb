@@ -3,25 +3,31 @@ class CommentsController < ApplicationController
     skip_before_action :require_login, only: [:index, :show]
 
     def index
-        @comments = Comment.all
+        if params[:plant_id] 
+            @comments = Plant.find(params[:plant_id]).comments
+        else
+            @comments = Comment.all
+        end
     end
 
     def show
         @comment = Comment.find(params[:id])
-        @plant = Plant.find(params[:id])
+        @plant = @comment.plant
     end
 
     def new
-        @comment = Comment.new
+        if params[:plant_id]
+            @comment = Comment.new(plant_id: params[:plant_id])
+        else 
+            @comment = Comment.new
+        end
     end
 
     def edit
     end
 
     def create
-        @comment = Comment.new(comment_params)
-        @comment.user_id = session[:user_id]
-
+        @comment = current_user.comments.build(comment_params)
         if @comment.save
             redirect_to @comment, notice: "Comment was sucessfully created."
         else
@@ -31,7 +37,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:title, :content, :plant_id)
+        params.require(:comment).permit(:title, :content, :plant_id, :user_id)
     end
 
     def require_login

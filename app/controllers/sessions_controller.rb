@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       @user = User.find_or_create_by(email: auth['email']) do |u|
         u.name = auth['name']
         u.uid = auth['uid']
-        u.password = SecureRandom.urlsafe_base64
+        u.password = SecureRandom.urlsafe_base64(5)
       end
         
       session[:user_id] = @user.id

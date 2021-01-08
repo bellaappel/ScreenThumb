@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :comments
   resources :plants do 
-    resources :comments, only: [:show, :new]
+    resources :comments, only: [:index, :new]
   end
   resources :orders, only: [:index, :show] do
     resources :plants, only: [:index, :show]
