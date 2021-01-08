@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
         if params[:order_id]
             @plants = Order.find(params[:order_id]).plants
         else
-            @plants = Plant.all 
+            @plants = Plant.all.order_by_name 
         end
     end
 

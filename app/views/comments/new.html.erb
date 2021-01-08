@@ -1,7 +1,12 @@
 <h1> New Comment </h1>
 <%= form_for @comment do |f| %>
 <%= f.label :plant %>
-<%= f.collection_select :plant_id, Plant.all, :id, :name %>
+<% if @comment.plant_id == nil %>    
+    <%= f.collection_select :plant_id, Plant.all, :id, :name %>
+<% else %>
+    <%= f.hidden_field :plant_id, value: @comment.plant_id %>
+    <%= @comment.plant.name %> 
+<% end %>     
 <br>
 <%= f.label :Title %>
 <%= f.text_field :title %>

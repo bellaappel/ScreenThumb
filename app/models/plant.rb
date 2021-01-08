@@ -5,4 +5,5 @@ class Plant < ApplicationRecord
     has_many :users, through: :comments
     validates :name, uniqueness: true 
     has_one_attached :img
+    scope :order_by_name, -> { order(name: :asc) }
 end
